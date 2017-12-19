@@ -1,0 +1,53 @@
+package kn_15_5.Shapovalova.db;
+
+import java.util.Collection;
+
+import kn_15_5.Shapovalova.User;
+
+/**
+ * Interface for User with implement DAO pattern
+ * @author Shapovalova Katya
+ * @version 0.0.1 dated October 23, 2017
+ */
+public interface UserDao {
+	
+	/**
+	 * Add new entries with user data in the Database and set the ID value
+	 * @throws DatabaseException in case of any error with Database
+	 * @param All user fields must be not null, except for the id field
+	 * @return Copy of user from Database with id
+	 */
+	public User create(User user) throws DatabaseException;
+	
+	/**
+	 * Update user in Database
+	 * @throws DatabaseException in case of any error with Database
+	 * @return Copy of user from Database with id
+	 */
+	public void update(User user) throws DatabaseException;
+	
+	/**
+	 * Delete user with Database
+	 * @throws DatabaseException in case of any error with Database
+	 */
+	public void delete(User user) throws DatabaseException;
+	
+	/**
+	 * Find user in Database
+	 * @throws DatabaseException in case of any error with Database
+	 * @return the user from Database
+	 */
+	public User find(Long id) throws DatabaseException;
+	
+	/**
+	 * Find all users in Database
+	 * @throws DatabaseException in case of any error with Database
+	 * @return List users from Database
+	 */
+	public Collection<User> findAll() throws DatabaseException;
+	
+	/**
+	 * Create a new Connection object
+	 */
+	public void setConnectionFactory(ConnectionFactory connectionFactory);
+}

@@ -1,0 +1,5 @@
+package koroliukkn155.bd;
+
+public interface UserDao {
+
+}

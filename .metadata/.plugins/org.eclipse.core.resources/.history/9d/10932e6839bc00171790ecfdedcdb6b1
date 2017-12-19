@@ -1,0 +1,5 @@
+package org.dbunit.database;
+
+public class DatabaseConnection {
+
+}
